@@ -1,0 +1,23 @@
+table, td, th {
+    border: 1px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(0, 73, 55);
+
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 90%;
+
+  }
+
+  th, td {
+    padding: 45px;
+
+  }
+
+  table.center {
+    margin-left: auto;
+    margin-right: auto;
+  }

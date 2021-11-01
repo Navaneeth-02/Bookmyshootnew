@@ -1,0 +1,32 @@
+<style>
+h2{
+    padding-top: 3%;
+    color:rgb(145, 74, 133);
+}
+</style>
+<h2 style=margin-left:5%> Booking List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr> 
+            <th> Name</th>
+            <th> Email </th>
+            <th> Phone Number</th>
+            <th> Event Type </th>
+            <th> Event Start Date</th>
+            <th> Event End Date</th>
+            <th> Address </th>
+ 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books" >
+            <td> {{ book.name }} </td>
+            <td> {{ book.email }} </td>
+            <td> {{ book.phone }} </td>
+            <td> {{ book.event }} </td>
+            <td> {{ book.start }} </td>
+            <td> {{ book.close }} </td>
+            <td> {{ book.address }} </td>
+        </tr>
+    </tbody>
+</table>
