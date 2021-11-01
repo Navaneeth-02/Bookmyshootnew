@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+
+body
+{
+	background-color: #1abc9c;
+	color: white;
+    height: 700px;
+   
+}
+label
+{
+	color: black;
+}
+
+h1
+{
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 20px;
+}
+/* Style all input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  color: black;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style the container for inputs */
+.container {
+  margin: auto;  
+  margin: 20 0 0 450px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 30%;
+  
+}
+
+.message {
+ 
+ color: black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+		<strong>Welcome!</strong> You are logged in successfully!
+		<button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	  </div>
+
+
+<h1>Login Page</h1>
+
+
+<div class="container">
+  <form [formGroup]="exform" (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+    <label>Username:</label>
+    <input type="text" name="username" class="form-control" formControlName="name"
+      [(ngModel)] = "userName" required>
+
+      <div class="text-danger" *ngIf="f.name.invalid && f.name.touched">
+          Name is required
+      </div>
+
+    </div>
+
+	
+
+    <div class="form-group">
+    <label>Password:</label>
+    <input type="password" name="password" class="form-control" formControlName="password"
+     [(ngModel)] = "password" required>
+
+     <div class="text-danger" *ngIf="f1.password.invalid && f1.password.touched">
+       Password is required
+     </div>
+
+    </div>
+    <br>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!exform.valid" 
+    routerLink= "/home-component" routerLinkActive="active">Sign in</button>
+  </div>
+    <p class="message">Not registered? <a href="#" routerLink= "/register-component" routerLinkActive="active" style="padding-left: 120px;">Create an account</a></p>
+  </form>
+</div>
+
+</body>
+</html>
