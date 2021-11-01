@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+   </head>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    /* Style the header */
+    .header {
+      padding: 80px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+    
+    /* Increase the font size of the h1 element */
+    .header h1 {
+      font-size: 60px;
+    }
+
+    /* Column container */
+    .row {  
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+    .side {
+      flex: 20%;
+
+      padding: 20px;
+    }
+
+                img {
+                    width: 70%;
+                    height: 70%;
+                    object-fit: contain;
+                }
+
+
+    /* Main column */
+    .main {
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+    }
+    
+    /* Fake image, just for this example */
+    
+        /* **************rgb(58, 92, 86) 99, 94)************************************** */
+    
+    .mySlides1, .mySlides2 {
+      display: flexbox;
+      width: 100px;
+      
+      
+    }
+    img {vertical-align: middle;
+    height:180px;
+    }
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+     
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: grey;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a grey background color */
+    .prev:hover, .next:hover {
+      background-color: #f1f1f1;
+      color: dark;
+    }
+    /* ========================================================================= */
+     
+     .button {
+      border-radius: 8px;
+      background-color:#d14848;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 230px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+    
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+
+    </style>
+
+
+    <body>
+
+    <div class="header">
+      <h1>Welcome to BookMyShoot</h1>
+      <p>Photography <b>makes us Happy</b>  to  take a shot.</p>
+
+      <button class="button" routerLink= "/categories-component" routerLinkActive="active" ><span>Get Started</span></button>
+
+    </div>
+
+
+
+    <div class="row">
+      <div class="side">
+        <h2>Sony</h2>
+        <h5>Best of ours:</h5>
+        <div class="fakeimg" style="height:200px;">
+            <div class="rack"><img [src]="myimage5" >
+        </div>
+        </div>
+        <br>
+        <p>We capture photos and videos for
+           corporate events, meeting, schools & college events. </p>
+        <h3>Canon EOS R3</h3>
+        <p>Capture the most fleeting of moments at 30fps.</p>
+
+        <div class="fakeimg" style="height:200px;">
+            <div class="column">
+                <img [src]="myimage6" >
+            </div>
+        </div>
+        <br>
+        <br/>
+        <div class="fakeimg" style="height:200px;">
+            <div class="column">
+                <img [src]="myimage7" >
+            </div>
+        </div>
+        <br>
+
+      </div>
+
+      <!-- ////////////////////////////////////////////////// -->
+
+
+      
+    
+      <div class="main">
+
+        <marquee>Photography <b>makes us Happy</b> to take a shot</marquee>
+
+      <h2>Shadow Photography</h2>
+        <h5>Chennai, Tamilnadu</h5>
+        <div class="fakeimg" style="height:2px;"></div>
+
+<hr>
+        <div class="slideshow-container">
+        <div class="mySlides1">
+        <img [src]="myimage8" style="width:900%">
+      </div>
+    
+    <hr>  
+    
+     
+    
+      
+       </div> 
+
+
+
+
+        <b><p>Candid Wedding photographers & cinematographers</p></b>
+        <p>When it comes to wedding photography, its that special moment that 
+          every one relishes from the stolen moments in life – the loving glances, 
+          tender kisses, shared laughter and joyful tears – the bond between two families,
+           creating an indelible memory lane that one relishes to revisit with nostalgia.
+            Its all about taking the right shot at the right time and at the right moment. 
+            A missed opportunity is missed… for ever!</p>
+
+
+
+
+        <br>
+
+
+        <h2>Wedding Shoots</h2>
+        <h5>Gallery</h5>
+        <div class="fakeimg" style="height:2px;"></div>
+
+
+         <div class="slideshow-container">
+
+    <hr>
+      <div class="mySlides2">
+        <img [src]="myimage14" style="width:900%">
+      </div>
+    <hr>
+      
+    <div class="mySlides2">
+      <img [src]="myimage13" style="width:900%">
+    </div>
+
+
+
+    </div>
+
+
+        <b><p>Happy moments</p></b>
+        <p>The most beautiful things in life revolve around lingering memories and moments. 
+          You make memories and we help you capture and frame them into beautiful moments 
+          that you would cherish and relive, now and forever...</p>
+
+
+
+    </div>
+    </div>
+
+
+
+
+    <script>
+    var slideIndex = [1,1];
+    var slideId = ["mySlides1", "mySlides2"]
+    showSlides[1, 0];
+    showSlides[1, 1];
+    
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+    
+    function showSlides(n, no) {
+      var i;
+      var [x] = document.getElementsByClassName(slideId[no]);
+      if (n > [x].length) {slideIndex[no] = 1}
+      if (n < 1) {slideIndex[no] = [x].length}
+      for (i = 0; i < [x].length; i++) {
+         x[i].style.display = "none";
+      }
+      x[slideIndex[no]-1].style.display = "block";
+    }
+    </script>
+
+
+
+</body>
+</html>
