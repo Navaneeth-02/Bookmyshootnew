@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+
+
+<style>
+
+
+body {
+  width: 1500px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color:#1abc9c;
+  color:white;
+
+}
+
+div.elem-group {
+  margin: 20px 0;
+
+}
+
+div.elem-group.inlined {
+  width: 310px;
+  display: inline-block;
+ 
+  margin-left: 0px;
+
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  padding-bottom: 10px;
+
+}
+
+input, select, textarea {
+  border-radius: 5px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+
+  width: 650px;;
+  line-height: 22px;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 310px;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+textarea {
+  height: 100px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 650px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 670px;
+        margin-left: 0px;
+    }
+}
+
+
+</style>
+
+</head>
+
+
+
+
+
+<body>
+  <div class="container">
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+		<strong>Success!</strong> Your phoyoshoot has been booked successfully!
+		<button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	  </div>
+  </div>
+
+  <form [formGroup]="exform" (ngSubmit) = "onSubmit()">
+
+	<h2>Book Now!</h2>
+
+  <div class="elem-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="visitor_name" placeholder="John Doe" class="form-control" formControlName="name"
+    [(ngModel)] = "book.name" required>
+
+    <div class="text-danger" *ngIf="f.name.invalid && f.name.touched">
+      Name is required!
+    </div>
+  </div>
+  <div class="elem-group">
+    <label for="email">Your E-mail</label>
+    <input type="email" id="email" name="visitor_email" class="form-control" formControlName="email" placeholder="john.doe@email.com"
+    [(ngModel)] = "book.email"  required>
+
+
+    <span class="text-danger" *ngIf="(f1.email.touched || submitted) && f1.email.errors?.required">
+      Email is required!
+    </span>
+
+    <span class="text-danger" *ngIf="f1.email.invalid && f1.email.errors?.pattern">
+      Enter a valid email address!
+    </span>
+
+
+  </div>
+  <div class="elem-group">
+    <label for="phone">Your Phone</label>
+    <input type="tel" id="phone" name="visitor_phone" placeholder="123-456-7890"
+    pattern= "(\d{3})-?\s?(\d{3})-?\s?(\d{4})" [(ngModel)] = "book.phone" required>
+  </div>
+
+
+  <hr>
+
+
+  <div class="elem-group">
+    <label for="event-selection">Select Event</label>
+    <select id="event-selection" name="room_preference" [(ngModel)] = "book.event" required>
+        <option value="">Select a Event from the List</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Babies and Kids">Babies and Kids</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Product Shoot">Product Shoot</option>
+        <option value="Fashion and Portfolio">Fashion and Portfolio</option>
+
+    </select>
+  </div>
+
+
+  <div class="elem-group inlined" style="width: 320px;">
+    <label for="checkin-date">Scheduled From*</label>
+    <input type="date" id="checkin-date" name="checkin" [(ngModel)] = "book.start" required>
+  </div>
+  <div class="elem-group inlined">
+    <label for="checkout-date">Scheduled Till*</label>
+    <input type="date" id="checkout-date" name="checkout"  [(ngModel)] = "book.close" required>
+  </div>
+
+
+  <hr>
+
+
+  <div class="elem-group">
+    <label for="message">Address:</label>
+    <textarea id="message" name="visitor_message" placeholder="Address in Detail..." [(ngModel)] = "book.address" required></textarea>
+  </div>
+  <div class="elem-group">
+    <button type="submit" class="btn btn-success btn-block" [disabled]="!exform.valid">Confirm Booking</button>
+	
+</div>
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
