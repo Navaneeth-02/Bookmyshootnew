@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      padding-top: 10px;
+    }
+
+    img {
+      border-radius: 50%;
+      align: center;
+      padding: 15px;
+    }
+
+    .container {
+      background-color: grey;
+      width: 1000px;
+      height: 230px;
+      border-radius: 10px;
+      border-bottom: 20px solid rgb(255, 65, 95);
+      margin-left: 2px;
+    }
+
+    .slide0 {
+      width: 306px;
+      position: absolute;
+      top: 45px;
+      left: 0px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 115px;
+      left: 266px;
+    }
+
+    .slide1 {
+      width: 306px;
+      position: absolute;
+      top: 45px;
+      left: 26px;
+    }
+
+    .slide2 {
+      width: 306px;
+      position: absolute;
+      top: 86px;
+      left: 0px;
+    }
+
+    .slide3 {
+      width: 306px;
+      position: absolute;
+      top: 88px;
+      left: 25px;
+    }
+
+    .slide4 {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      padding-top: 0px;
+
+      width: 80px;
+      height: 25px;
+
+      position: absolute;
+      top: 140px;
+      left: 0px;
+      text-align: center;
+
+    }
+
+
+
+    .slide5 {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 8px;
+      padding-top: 2px;
+
+      width: 120px;
+      height: 25px;
+
+      position: absolute;
+      top: 140px;
+      left: 90px;
+      text-align: center;
+    }
+
+    .slide6 {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      padding-top: 2px;
+
+      width: 140px;
+      height: 25px;
+
+      position: absolute;
+      top: 140px;
+      left: 220px;
+      text-align: center;
+    }
+
+    .slide7 {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      padding-top: 2px;
+
+      width: 142px;
+      height: 25px;
+
+      position: absolute;
+      top: 140px;
+      left: 370px;
+      text-align: center;
+    }
+
+    .slide8 {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      padding-top: 2px;
+
+      width: 160px;
+      height: 25px;
+
+      position: absolute;
+      top: 140px;
+      left: 521px;
+      text-align: center;
+    }
+
+    .column {
+      float: left;
+      width: 100px;
+      padding: 5px;
+      border-radius: 0px;
+    }
+
+
+    .button {
+      border-radius: 4px;
+      background-color: #d14848;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .center {
+      margin-left: 390px;
+    }
+
+    .center1 {
+      padding: 10px;
+      padding-top: 2px;
+
+      width: 130px;
+      height: 7px;
+
+      position: absolute;
+      top: 20px;
+      left: 577px;
+      text-align: center;
+    }
+
+    .center2 {
+      padding: 10px;
+      padding-top: 2px;
+
+      width: 130px;
+      height: 7px;
+
+      position: absolute;
+      top: 50px;
+      left: 577px;
+      text-align: center;
+    }
+  </style>
+
+
+<body>
+  <p>Best <b>Photographers</b> from all over <b>India</b></p>
+  <div class="content">
+
+    <div class="container">
+      <img [src]="myimage" alt="Avatar" style="width:200px">
+    </div>
+
+    <div class="slide">
+      <h3>Shadow Photography</h3>
+      <div class="slide0"><i class="material-icons" style="color:#d14848;">place</i></div>
+      <div class="slide1">
+        <p>chennai, tamil nadu</p>
+      </div>
+
+      <div class="slide2"><i class="material-icons">local_phone</i></div>
+      <div class="slide3">
+        <p>+91955195XXXX</p>
+      </div>
+      <div class="slide4" style="text-align: center;">Wedding</div>
+
+      <div class="slide5">Babies & Kids</div>
+
+      <div class="slide6" style="text-align: center;">Special Occasion</div>
+
+      <div class="slide7"> Corporate Events </div>
+
+      <div class="slide8"> Fashion & Portfolio </div>
+
+      <!-- ///////////////////star////////////////// -->
+
+      <div class="center1">
+        <span class="fa fa-star checked" style="color: orange;"></span>
+        <span class="fa fa-star checked" style="color: orange;"></span>
+        <span class="fa fa-star checked" style="color: orange;"></span>
+        <span class="fa fa-star checked" style="color: orange;"></span>
+        <span class="fa fa-star" style="color: white;"></span>
+      </div>
+      <div class="center2">
+        <p><span style="font-size:20px;">&#8377;15,000</span></p>
+      </div>
+    </div>
+
+    <div class="row" style="width: 1200px; display: table; margin-left: 20px">
+
+      <div class="column" style="display: table-row; margin: 7px 12px 12px -10px;">
+        <img [src]="myimage1" alt="Snow" style="width:277% ; height: 200px; border-radius: 10%;">
+      </div>
+
+      <div class="column" style=" display: table-row; margin: 7px 12px 12px 128px;">
+        <img [src]="myimage2" alt="Forest" style="width:277% ; height: 200px;  border-radius: 10%;">
+      </div>
+
+      <div class="column" style=" display: table-row; margin: 7px 12px 12px 128px;">
+        <img [src]="myimage3" alt="Mountains" style="width:277% ; height: 200px;  border-radius: 10%;">
+      </div>
+
+      <div class="column" style=" display: table-row; margin: 7px 12px 12px 128px;">
+        <img [src]="myimage4" alt="Mountains" style="width: 277% ; height: 200px; border-radius: 10%;">
+      </div>
+
+    </div>
+
+    <div class="center">
+      <button class="button" routerLink="/book-component" routerLinkActive="active" id="myButton">
+        <span>Book </span></button>
+    </div>
+  </div>
+</body>
